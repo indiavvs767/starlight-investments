@@ -1,1 +1,67 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Simple Signup Form</title>
+  <style>
+    body{font-family:Arial;padding:20px;background:#f2f2f2}
+    .div1,.div2,.div3,.div4,.div5,.div6{margin-bottom:15px}
+    input,select{width:100%;padding:8px;border:1px solid #ccc;border-radius:4px}
+    button{padding:10px 15px;background:#007bff;color:#fff;border:0;border-radius:4px;cursor:pointer}
+  </style>
+</head>
+<body>
+  <h2>Signup Form</h2>
+
+  <form id="form">
+
+    <div class="div1">
+      <label>Full Name</label>
+      <input type="text" id="name" placeholder="Enter full name" required>
+    </div>
+
+    <div class="div2">
+      <label>Email</label>
+      <input type="email" id="email" placeholder="Enter email" required>
+    </div>
+
+    <div class="div3">
+      <label>Password</label>
+      <input type="password" id="password" placeholder="Enter password" required>
+    </div>
+
+    <div class="div4">
+      <label>Phone</label>
+      <input type="text" id="phone" placeholder="Enter phone number">
+    </div>
+
+    <div class="div5">
+      <label>Age</label>
+      <select id="age">
+        <option>Select age</option>
+        <option>Under 18</option>
+        <option>18-24</option>
+        <option>25-34</option>
+        <option>35-44</option>
+        <option>45+</option>
+      </select>
+    </div>
+
+    <div class="div6">
+      <label><input type="checkbox" id="terms"> Accept Terms & Conditions</label>
+    </div>
+
+    <button type="submit">Submit</button>
+
+  </form>
+
+<script>
+  document.getElementById("form").addEventListener("submit", function(e){
+    e.preventDefault();
+    alert("Form submitted!");
+  });
+</script>
+
+</body>
+</html>
 
