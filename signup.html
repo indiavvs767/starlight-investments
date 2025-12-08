@@ -1,136 +1,181 @@
-<!doctype html>
-<html>
-<head>
-  <meta charset="utf-8" />
-  <title>Premium Investment Signup</title>
-  <style>
-    body{
-      font-family:Arial, sans-serif;
-      padding:40px;
-      background:#000;
-      display:flex;
-      justify-content:center;
-    }
+<!-- FULLY RESPONSIVE PROFESSIONAL SIGNUP & LOGIN PREVIEW (UPDATED) -->
+<h2 style="color: gold; text-align:center; margin-bottom:18px;">Responsive Professional Signup & Login — Preview</h2>
 
-    .container{
-      width:420px;
-      background:#111;
-      padding:25px 30px;
-      border-radius:10px;
-      border:1px solid #c9a142;
-      box-shadow:0 0 12px rgba(201,161,66,0.4);
-      color:#fff;
-    }
+<!-- CONTAINER -->
+<div id="previewWrap" style="display:flex; justify-content:center; align-items:flex-start; gap:32px; padding:30px; background:#000; font-family:Inter, Arial, sans-serif; flex-wrap:wrap;">
 
-    h2{
-      text-align:center;
-      color:#c9a142;
-      margin-bottom:20px;
-      font-size:26px;
-      letter-spacing:1px;
-    }
+  <!-- SIGNUP CARD -->
+  <div id="signupCard" style="background:#111; width:100%; max-width:460px; padding:28px; border-radius:14px; box-shadow:0 8px 30px rgba(255,215,0,0.07); border:1px solid rgba(255,215,0,0.06);">
+    <h3 style="text-align:center; color:gold; margin-bottom:14px; font-size:20px; letter-spacing:0.3px;">Create Your Account</h3>
 
-    .div1,.div2,.div3,.div4,.div5,.div6{
-      margin-bottom:18px;
-    }
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+      <input id="fullName" placeholder="Full Name" style="grid-column:1/3; padding:12px; border-radius:10px; border:1px solid gold; background:#000; color:gold;">
 
-    label{display:block;margin-bottom:6px;font-size:14px;color:#c9a142}
+      <input id="email" type="email" placeholder="Email Address" style="grid-column:1/3; padding:12px; border-radius:10px; border:1px solid gold; background:#000; color:gold;">
 
-    input,select{
-      width:100%;
-      padding:10px;
-      background:#000;
-      border:1px solid #c9a142;
-      color:#fff;
-      border-radius:6px;
-      font-size:14px;
-    }
+      <input id="phone" placeholder="Phone Number" style="padding:12px; border-radius:10px; border:1px solid gold; background:#000; color:gold;">
 
-    input::placeholder{color:#777}
+      <input id="dob" type="date" placeholder="Date of Birth" style="padding:12px; border-radius:10px; border:1px solid gold; background:#000; color:gold;">
 
-    button{
-      width:100%;
-      padding:12px;
-      background:linear-gradient(90deg,#cfa84a,#b98a2e);
-      border:0;
-      border-radius:6px;
-      color:#000;
-      font-weight:bold;
-      font-size:15px;
-      cursor:pointer;
-      margin-top:10px;
-      transition:0.3s;
-    }
+      <input id="address" placeholder="House Address" style="grid-column:1/3; padding:12px; border-radius:10px; border:1px solid gold; background:#000; color:gold;">
 
-    button:hover{
-      transform:scale(1.03);
-      box-shadow:0 0 10px rgba(201,161,66,0.6);
-    }
+      <input id="state" placeholder="State" style="padding:12px; border-radius:10px; border:1px solid gold; background:#000; color:gold;">
 
-    .terms{
-      display:flex;
-      align-items:center;
-      gap:8px;
-      font-size:13px;
-      color:#ddd;
-    }
-    .terms input{width:auto}
-
-  </style>
-</head>
-<body>
-
-<div class="container">
-  <h2>Investment Signup</h2>
-
-  <form id="form">
-
-    <div class="div1">
-      <label>Full Name</label>
-      <input type="text" id="name" placeholder="Enter full name" required>
-    </div>
-
-    <div class="div2">
-      <label>Email</label>
-      <input type="email" id="email" placeholder="Enter email" required>
-    </div>
-
-    <div class="div3">
-      <label>Password</label>
-      <input type="password" id="password" placeholder="Enter password" required>
-    </div>
-
-    <div class="div4">
-      <label>Phone</label>
-      <input type="text" id="phone" placeholder="Enter phone number">
-    </div>
-
-    <div class="div5">
-      <label>Investment Amount</label>
-      <select id="amount">
-        <option>Select amount</option>
-        <option>$100 - $500</option>
-        <option>$500 - $2,000</option>
-        <option>$2,000 - $10,000</option>
-        <option>$10,000+</option>
+      <select id="country" style="padding:12px; border-radius:10px; border:1px solid gold; background:#000; color:gold;">
+        <option value="">Select Country</option>
+        <option>Nigeria</option>
+        <option>United States</option>
+        <option>United Kingdom</option>
+        <option>Canada</option>
+        <option>Ghana</option>
+        <option>South Africa</option>
       </select>
     </div>
 
-    <div class="div6 terms">
-      <input type="checkbox" id="terms"> I agree to the terms.
+    <!-- ID Verification Toggle -->
+    <div style="margin-top:14px; display:flex; gap:10px; align-items:center;">
+      <input id="enableId" type="checkbox" style="width:18px;height:18px;">
+      <label for="enableId" style="color:gold; font-weight:600;">Enable ID Verification</label>
     </div>
 
-    <button type="submit">Create Investment Account</button>
+    <!-- ID VERIFICATION PANEL (hidden until enabled) -->
+    <div id="idPanel" style="display:none; margin-top:12px; border-radius:10px; padding:12px; background:linear-gradient(180deg, rgba(255,215,0,0.03), rgba(255,215,0,0.01)); border:1px solid rgba(255,215,0,0.06);">
+      <label style="color:gold; font-weight:600; display:block; margin-bottom:8px;">Select ID Type</label>
+      <select id="idType" style="width:100%; padding:12px; border-radius:8px; border:1px solid gold; background:#000; color:gold;">
+        <option value="">Choose ID</option>
+        <option value="drivers">Driver's License</option>
+        <option value="national">National ID</option>
+        <option value="passport">Passport</option>
+        <option value="voter">Voter's Card</option>
+      </select>
 
-  </form>
+      <div id="uploadGroup" style="display:none; margin-top:12px; gap:10px;">
+        <label style="color:gold; font-weight:600;">Upload ID - Front</label>
+        <input id="idFront" type="file" accept="image/*" style="width:100%; padding:10px; border-radius:8px; border:1px solid gold; background:#000; color:gold;">
+
+        <label style="color:gold; font-weight:600; margin-top:6px;">Upload ID - Back</label>
+        <input id="idBack" type="file" accept="image/*" style="width:100%; padding:10px; border-radius:8px; border:1px solid gold; background:#000; color:gold;">
+
+        <div id="previewImages" style="display:flex; gap:8px; margin-top:10px;"></div>
+      </div>
+    </div>
+
+    <!-- Passwords & Terms -->
+    <div style="margin-top:14px; display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+      <input id="password" type="password" placeholder="Password" style="padding:12px; border-radius:10px; border:1px solid gold; background:#000; color:gold;">
+      <input id="confirm" type="password" placeholder="Confirm Password" style="padding:12px; border-radius:10px; border:1px solid gold; background:#000; color:gold;">
+    </div>
+
+    <div style="display:flex; align-items:center; gap:10px; margin-top:12px;">
+      <input id="terms" type="checkbox" style="width:18px;height:18px;">
+      <label for="terms" style="color:gold;">I agree to the <u>Terms & Conditions</u></label>
+    </div>
+
+    <!-- ACTION -->
+    <button id="createBtn" style="width:100%; margin-top:14px; padding:14px; border-radius:10px; background:gold; color:#000; border:none; font-weight:700; font-size:15px; cursor:pointer; box-shadow:0 6px 18px rgba(255,215,0,0.12);">Create Account</button>
+
+  </div>
+
+  <!-- LOGIN CARD -->
+  <div id="loginCard" style="background:#111; width:100%; max-width:380px; padding:26px; border-radius:14px; box-shadow:0 8px 30px rgba(255,215,0,0.07); border:1px solid rgba(255,215,0,0.06);">
+    <h3 style="text-align:center; color:gold; margin-bottom:12px; font-size:20px;">Welcome Back</h3>
+
+    <input id="loginEmail" type="email" placeholder="Email Address" style="width:100%; padding:12px; border-radius:10px; border:1px solid gold; background:#000; color:gold; margin-bottom:10px;">
+    <input id="loginPass" type="password" placeholder="Password" style="width:100%; padding:12px; border-radius:10px; border:1px solid gold; background:#000; color:gold; margin-bottom:10px;">
+
+    <div style="display:flex; align-items:center; justify-content:space-between; color:gold; margin-bottom:10px;">
+      <label style="display:flex; align-items:center; gap:8px;"><input type="checkbox" style="width:16px;height:16px;"> Remember Me</label>
+      <a href="#" style="color:gold; text-decoration:none;">Forgot?</a>
+    </div>
+
+    <button style="width:100%; padding:12px; border-radius:10px; background:gold; color:#000; border:none; font-weight:700; cursor:pointer;">Login</button>
+
+    <p style="text-align:center; color:gold; margin-top:12px;">Don't have an account? <a href="#" style="color:gold; font-weight:700;">Sign Up</a></p>
+  </div>
+
 </div>
 
+<!-- STYLES FOR RESPONSIVENESS -->
+<style>
+  @media (max-width: 900px) {
+    #previewWrap { padding:20px; }
+    #signupCard, #loginCard { max-width:100%; }
+  }
+  @media (max-width: 480px) {
+    #signupCard { padding:18px; }
+    #loginCard { padding:18px; }
+    input, select, button { font-size:14px; }
+    h3 { font-size:18px; }
+  }
+</style>
+
+<!-- INTERACTIVE SCRIPTS FOR PREVIEW -->
 <script>
-  document.getElementById("form").addEventListener("submit", function(e){
-    e.preventDefault();
-    alert("Your investment account has been created!");
+  const enableId = document.getElementById('enableId');
+  const idPanel = document.getElementById('idPanel');
+  const idType = document.getElementById('idType');
+  const uploadGroup = document.getElementById('uploadGroup');
+  const idFront = document.getElementById('idFront');
+  const idBack = document.getElementById('idBack');
+  const previewImages = document.getElementById('previewImages');
+
+  enableId.addEventListener('change', () => {
+    idPanel.style.display = enableId.checked ? 'block' : 'none';
+    // reset selections when disabled
+    if(!enableId.checked) {
+      idType.value = '';
+      uploadGroup.style.display = 'none';
+      previewImages.innerHTML = '';
+      idFront.value = '';
+      idBack.value = '';
+    }
+  });
+
+  idType.addEventListener('change', () => {
+    uploadGroup.style.display = idType.value ? 'block' : 'none';
+    previewImages.innerHTML = '';
+    idFront.value = '';
+    idBack.value = '';
+  });
+
+  function showImagePreview(fileInput, label) {
+    const file = fileInput.files[0];
+    if(!file) return;
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      const img = document.createElement('img');
+      img.src = e.target.result;
+      img.style.width = '100px';
+      img.style.height = '70px';
+      img.style.objectFit = 'cover';
+      img.style.borderRadius = '6px';
+      img.style.border = '1px solid rgba(255,215,0,0.3)';
+      img.alt = label;
+      img.title = label;
+
+      // replace or append
+      const existing = previewImages.querySelector('[data-label="'+label+'"]');
+      if(existing) existing.replaceWith(img);
+      img.setAttribute('data-label', label);
+      previewImages.appendChild(img);
+    };
+    reader.readAsDataURL(file);
+  }
+
+  idFront.addEventListener('change', () => showImagePreview(idFront, 'front'));
+  idBack.addEventListener('change', () => showImagePreview(idBack, 'back'));
+
+  // Create Account click - simple validation for preview
+  document.getElementById('createBtn').addEventListener('click', () => {
+    const required = ['fullName','email','phone','address','password','confirm'];
+    for(const id of required) {
+      const el = document.getElementById(id);
+      if(!el.value) { alert('Please fill all required fields.'); el.focus(); return; }
+    }
+    if(document.getElementById('password').value !== document.getElementById('confirm').value) {
+      alert('Passwords do not match.'); return;
+    }
+    if(!document.getElementById('terms').checked) { alert('Please accept Terms & Conditions.'); return; }
+    alert('Account creation simulated (preview).');
   });
 </script>
-
-</body>
-</html>
